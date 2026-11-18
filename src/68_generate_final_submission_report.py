@@ -37,6 +37,12 @@ FILES = {
 OUTPUT_REPORT = REPORTS / "FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md"
 DOCS_REPORT = DOCS / "FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md"
 
+# Public competition context and implementation repository
+GITHUB_REPOSITORY = "https://github.com/Kamalesh-Suresh-Kumar/SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon"
+REGISTERED_PARTICIPANTS = 28197  # Unstop listing snapshot: 17 November 2026
+ROUND_1_FINALISTS = 16
+ROUND_1_FINALIST_SHARE = ROUND_1_FINALISTS / REGISTERED_PARTICIPANTS * 100
+
 print("\n" + "=" * 85)
 print("STEP 68: FINAL RR HACKATHON SUBMISSION REPORT")
 print("=" * 85)
@@ -628,6 +634,87 @@ print("Player-level evidence validation: PASS (10 batters, 10 bowlers).")
 
 
 # ============================================================
+# 9B. BUILD EVIDENCE-LED SQUAD CONTRIBUTION INTERPRETATION
+# ============================================================
+
+def build_squad_contribution_table(data, player_type):
+    rows = []
+
+    for _, row in data.sort_values("rank").iterrows():
+        player = str(row["player_name"])
+        matches = int(row["qualifying_pressure_matches"])
+        consistency = float(row["consistency_percentage"])
+
+        if player_type == "Batter":
+            sr_change = float(row["strike_rate_improvement"])
+            dismissal_change = float(row["dismissal_rate_improvement"])
+
+            signals = []
+            if sr_change > 0:
+                signals.append("scored faster under pressure than their normal baseline")
+            elif sr_change < 0:
+                signals.append("scored more slowly under pressure than their normal baseline")
+            else:
+                signals.append("matched their normal scoring rate under pressure")
+
+            if dismissal_change > 0:
+                signals.append("had a lower dismissal rate under pressure")
+            elif dismissal_change < 0:
+                signals.append("had a higher dismissal rate under pressure")
+            else:
+                signals.append("had an unchanged dismissal rate under pressure")
+
+            evidence = (
+                f"Across {matches} qualifying pressure matches, the player "
+                f"{'; and '.join(signals)}. Consistency: {consistency:.1f}%."
+            )
+            implication = (
+                "Can inform RR's assessment of pressure-innings scoring and "
+                "batting stability. Validate batting position, role and squad "
+                "fit separately; this analysis does not assign a batting role."
+            )
+        else:
+            economy_change = float(row["economy_improvement"])
+            wicket_rate = float(row["pressure_wickets_per_100_legal_balls"])
+
+            if economy_change > 0:
+                economy_signal = "conceded fewer runs per over under pressure"
+            elif economy_change < 0:
+                economy_signal = "conceded more runs per over under pressure"
+            else:
+                economy_signal = "matched their normal economy under pressure"
+
+            evidence = (
+                f"Across {matches} qualifying pressure matches, the player "
+                f"{economy_signal}; pressure wicket rate was "
+                f"{wicket_rate:.2f} per 100 legal balls. "
+                f"Consistency: {consistency:.1f}%."
+            )
+            implication = (
+                "Can inform RR's assessment of pressure-overs run control and "
+                "wicket threat. Validate bowling phase, role and squad fit "
+                "separately; this analysis does not assign an over or phase."
+            )
+
+        rows.append({
+            "rank": int(row["rank"]),
+            "player": player,
+            "pressure evidence": evidence,
+            "potential RR squad relevance": implication
+        })
+
+    return markdown_table(pd.DataFrame(rows))
+
+
+batter_squad_contribution_table = build_squad_contribution_table(
+    batter_evidence, "Batter"
+)
+bowler_squad_contribution_table = build_squad_contribution_table(
+    bowler_evidence, "Bowler"
+)
+
+
+# ============================================================
 # 10. BUILD CROSS-FORMAT EVIDENCE TABLE
 # ============================================================
 
@@ -747,6 +834,16 @@ The final IPL shortlist contains:
 T20I results are used as supplementary evidence. They are not blended with IPL ratings because each competition has a different eligible population and independently calculated percentile scores.
 
 The methodology combines performance improvement, consistency and sample-size evidence into a weighted reliability rating.
+
+## 1.1 Competition Progression and Selection Context
+
+The Unstop competition listing displayed **{REGISTERED_PARTICIPANTS:,} registered participants** (listing snapshot dated 17 November 2026). The published progression identifies **{ROUND_1_FINALISTS} Round 1 finalists** for the in-person Round 2 hackathon in Mumbai. This represents approximately **{ROUND_1_FINALIST_SHARE:.3f}%** of the displayed registration count. The listing states that the Round 2 winner advances to the Round 3 IPL 2027 Auction Finale in Goa and presents their strategy to Rajasthan Royals' leadership.
+
+The published Round 1 brief asks participants to identify reliable players under pressure and submit the methodology, top picks and explanation of how the players could strengthen the Rajasthan Royals squad. The public event listing does not publish a detailed numerical judging rubric for selecting the Top 16 or the Round 2 winner. Accordingly, this report does not claim to know or reverse-engineer undisclosed evaluation weights. It focuses on making the stated analytical task independently assessable through explicit definitions, player-level evidence, reproducible calculations, validation checks and clearly stated limitations.
+
+**What this analysis makes assessable:** (i) why a player qualifies, (ii) how pressure performance compares with that player's normal baseline, (iii) how frequently the player performs above that baseline across pressure matches, (iv) how much qualifying evidence supports the rating, and (v) whether the final ranking survives independent integrity and sensitivity checks. The player-level evidence tables are intended to let a reviewer trace each shortlist position back to the underlying indicators rather than rely on a name-only recommendation.
+
+The reliability shortlist is a statistical decision-support layer, not a complete squad-building or auction-bidding model. Player role, squad gaps, availability, auction price and tactical fit must be considered separately before a final franchise decision.
 
 ---
 
@@ -1100,7 +1197,7 @@ These are sensitivity scenarios, not additional final rankings. The primary scen
 
 ---
 
-# 8. Final IPL Auction Recommendations
+# 8. Final IPL Reliability Shortlists and Player Evidence
 
 IPL is the primary competition for the auction shortlist.
 
@@ -1135,6 +1232,20 @@ The table compares each shortlisted bowler's pressure economy with their normal-
 The component scores show how the primary weighted rating was assembled. Performance, secondary-metric and consistency values are percentile scores within the eligible IPL bowler population. The sample score is the direct exposure score described in Section 7.5.
 
 {bowler_component_table}
+
+## 8.3 How the Pressure Evidence Can Inform RR Squad Decisions
+
+The following interpretations translate the measured pressure signals into decision-support context. They do not claim that the analysis has modelled RR's current squad gaps, player availability, auction price or tactical role.
+
+### Batter contribution context
+
+{batter_squad_contribution_table}
+
+### Bowler contribution context
+
+{bowler_squad_contribution_table}
+
+Use these evidence-led observations as a starting point for role and squad-fit review. The final franchise decision should also consider batting position, bowling phase, role coverage, overseas-player constraints, availability, auction price and the existing squad composition. Those factors are outside the current reliability model.
 
 These rankings are based on the primary IPL reliability rating.
 
@@ -1354,11 +1465,23 @@ For reproduction, install the packages listed in `requirements.txt`, place autho
 
 The organizer-provided data pack is not copied into this documentation output. Anyone reproducing the analysis must obtain the source data through an authorized copy and follow its applicable usage terms.
 
+## B.1 Source Code and Implementation Repository
+
+The complete Python source code, data-processing pipeline, validation scripts, sensitivity-analysis scripts, dependency requirements and project documentation are available in the public GitHub repository:
+
+**GitHub Repository:** [SupeRR Selector Season 2 – Rajasthan Royals IPL 2027 Auction Strategy]({GITHUB_REPOSITORY})
+
+The repository provides implementation transparency and supports review of the analytical workflow. Organizer-provided raw datasets and locally generated intermediate files are excluded from the public repository. Reproduction therefore requires an authorized copy of the original competition data pack and compliance with its applicable usage terms. The repository contains the implementation; this report remains the authoritative explanation of the pressure definitions, rating methodology, results and limitations.
+
 ---
 
 **Report generated:** {datetime.now().strftime("%d %B %Y")}
 
 **Project:** SupeRR Selector Season 2
+
+**Author:** Kamalesh S P
+
+**GitHub:** [github.com/Kamalesh-Suresh-Kumar/](https://github.com/Kamalesh-Suresh-Kumar/)
 
 **End of Report**
 """
@@ -1401,4 +1524,6 @@ print("STEP 68 COMPLETED")
 print("=" * 85)
 
 print("\nThe methodology report is ready for review.")
+print(f"Competition context: {REGISTERED_PARTICIPANTS:,} registered; {ROUND_1_FINALISTS} Round 1 finalists ({ROUND_1_FINALIST_SHARE:.3f}% of listed registrations).")
+print("GitHub repository link included in Appendix B.1.")
 print("Check the final report before submitting.")

@@ -27,6 +27,16 @@ T20I results are used as supplementary evidence. They are not blended with IPL r
 
 The methodology combines performance improvement, consistency and sample-size evidence into a weighted reliability rating.
 
+## 1.1 Competition Progression and Selection Context
+
+The Unstop competition listing displayed **28,197 registered participants** (listing snapshot dated 17 November 2026). The published progression identifies **16 Round 1 finalists** for the in-person Round 2 hackathon in Mumbai. This represents approximately **0.057%** of the displayed registration count. The listing states that the Round 2 winner advances to the Round 3 IPL 2027 Auction Finale in Goa and presents their strategy to Rajasthan Royals' leadership.
+
+The published Round 1 brief asks participants to identify reliable players under pressure and submit the methodology, top picks and explanation of how the players could strengthen the Rajasthan Royals squad. The public event listing does not publish a detailed numerical judging rubric for selecting the Top 16 or the Round 2 winner. Accordingly, this report does not claim to know or reverse-engineer undisclosed evaluation weights. It focuses on making the stated analytical task independently assessable through explicit definitions, player-level evidence, reproducible calculations, validation checks and clearly stated limitations.
+
+**What this analysis makes assessable:** (i) why a player qualifies, (ii) how pressure performance compares with that player's normal baseline, (iii) how frequently the player performs above that baseline across pressure matches, (iv) how much qualifying evidence supports the rating, and (v) whether the final ranking survives independent integrity and sensitivity checks. The player-level evidence tables are intended to let a reviewer trace each shortlist position back to the underlying indicators rather than rely on a name-only recommendation.
+
+The reliability shortlist is a statistical decision-support layer, not a complete squad-building or auction-bidding model. Player role, squad gaps, availability, auction price and tactical fit must be considered separately before a final franchise decision.
+
 ---
 
 # 2. Project Objectives
@@ -379,7 +389,7 @@ These are sensitivity scenarios, not additional final rankings. The primary scen
 
 ---
 
-# 8. Final IPL Auction Recommendations
+# 8. Final IPL Reliability Shortlists and Player Evidence
 
 IPL is the primary competition for the auction shortlist.
 
@@ -480,6 +490,42 @@ The component scores show how the primary weighted rating was assembled. Perform
 | 8 | Prasidh Krishna | 69.39 | 79.59 | 81.63 | 82.13 | 77.52 |
 | 9 | Noor Ahmad | 85.71 | 74.49 | 66.33 | 83.73 | 76.79 |
 | 10 | Shardul Thakur | 67.35 | 74.49 | 92.86 | 65.93 | 76.57 |
+
+## 8.3 How the Pressure Evidence Can Inform RR Squad Decisions
+
+The following interpretations translate the measured pressure signals into decision-support context. They do not claim that the analysis has modelled RR's current squad gaps, player availability, auction price or tactical role.
+
+### Batter contribution context
+
+| rank | player | pressure evidence | potential RR squad relevance |
+| --- | --- | --- | --- |
+| 1 | Ravindra Jadeja | Across 22 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a lower dismissal rate under pressure. Consistency: 77.3%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 2 | Namboori Tilak Varma | Across 14 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a higher dismissal rate under pressure. Consistency: 85.7%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 3 | Ayush Badoni | Across 21 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a lower dismissal rate under pressure. Consistency: 76.2%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 4 | Nicholas Pooran | Across 16 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a lower dismissal rate under pressure. Consistency: 68.8%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 5 | David Miller | Across 20 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a higher dismissal rate under pressure. Consistency: 70.0%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 6 | Rinku Singh | Across 21 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a lower dismissal rate under pressure. Consistency: 61.9%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 7 | Riyan Parag | Across 11 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a lower dismissal rate under pressure. Consistency: 54.5%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 8 | Mahendra Singh Dhoni | Across 23 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a lower dismissal rate under pressure. Consistency: 56.5%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 9 | Tim David | Across 17 qualifying pressure matches, the player scored more slowly under pressure than their normal baseline; and had a lower dismissal rate under pressure. Consistency: 64.7%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+| 10 | Abdul Samad | Across 17 qualifying pressure matches, the player scored faster under pressure than their normal baseline; and had a higher dismissal rate under pressure. Consistency: 64.7%. | Can inform RR's assessment of pressure-innings scoring and batting stability. Validate batting position, role and squad fit separately; this analysis does not assign a batting role. |
+
+### Bowler contribution context
+
+| rank | player | pressure evidence | potential RR squad relevance |
+| --- | --- | --- | --- |
+| 1 | Mohit Sharma | Across 17 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 11.61 per 100 legal balls. Consistency: 82.4%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 2 | Andre Russell | Across 15 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 9.94 per 100 legal balls. Consistency: 73.3%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 3 | Yash Dayal | Across 22 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 9.04 per 100 legal balls. Consistency: 68.2%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 4 | Yash Thakur | Across 11 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 10.00 per 100 legal balls. Consistency: 72.7%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 5 | Sunil Narine | Across 25 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 6.58 per 100 legal balls. Consistency: 80.0%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 6 | Harshit Rana | Across 15 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 6.75 per 100 legal balls. Consistency: 80.0%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 7 | Kuldeep Yadav | Across 23 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 7.63 per 100 legal balls. Consistency: 78.3%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 8 | Prasidh Krishna | Across 18 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 7.58 per 100 legal balls. Consistency: 72.2%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 9 | Noor Ahmad | Across 18 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 8.52 per 100 legal balls. Consistency: 66.7%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+| 10 | Shardul Thakur | Across 15 qualifying pressure matches, the player conceded fewer runs per over under pressure; pressure wicket rate was 7.01 per 100 legal balls. Consistency: 80.0%. | Can inform RR's assessment of pressure-overs run control and wicket threat. Validate bowling phase, role and squad fit separately; this analysis does not assign an over or phase. |
+
+Use these evidence-led observations as a starting point for role and squad-fit review. The final franchise decision should also consider batting position, bowling phase, role coverage, overseas-player constraints, availability, auction price and the existing squad composition. Those factors are outside the current reliability model.
 
 These rankings are based on the primary IPL reliability rating.
 
@@ -773,10 +819,22 @@ For reproduction, install the packages listed in `requirements.txt`, place autho
 
 The organizer-provided data pack is not copied into this documentation output. Anyone reproducing the analysis must obtain the source data through an authorized copy and follow its applicable usage terms.
 
+## B.1 Source Code and Implementation Repository
+
+The complete Python source code, data-processing pipeline, validation scripts, sensitivity-analysis scripts, dependency requirements and project documentation are available in the public GitHub repository:
+
+**GitHub Repository:** [SupeRR Selector Season 2 – Rajasthan Royals IPL 2027 Auction Strategy](https://github.com/Kamalesh-Suresh-Kumar/SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon)
+
+The repository provides implementation transparency and supports review of the analytical workflow. Organizer-provided raw datasets and locally generated intermediate files are excluded from the public repository. Reproduction therefore requires an authorized copy of the original competition data pack and compliance with its applicable usage terms. The repository contains the implementation; this report remains the authoritative explanation of the pressure definitions, rating methodology, results and limitations.
+
 ---
 
 **Report generated:** 18 November 2026
 
 **Project:** SupeRR Selector Season 2
+
+**Author:** Kamalesh S P
+
+**GitHub:** [github.com/Kamalesh-Suresh-Kumar/](https://github.com/Kamalesh-Suresh-Kumar/)
 
 **End of Report**

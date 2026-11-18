@@ -84,6 +84,7 @@ SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon/
 ├── .gitignore
 ├── requirements.txt
 ├── docs/
+│   ├── FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf
 │   └── FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md
 └── src/
     ├── 01_data_integration.py
@@ -152,6 +153,7 @@ The source scripts and report document the intended processing and validation wo
 The detailed report is available at:
 
 [`docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md`](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md)
+[`docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf`](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf)
 
 It documents the pressure definition, metrics, eligibility rules, rating methodology, final IPL rankings, T20I supporting evidence, sensitivity analysis, validation checks, limitations, and reproducibility notes.
 
