@@ -2,7 +2,7 @@
 
 ## Identifying the Most Reliable Players Under Pressure
 
-A data-driven analysis project for **SupeRR Selector Season 2**, focused on identifying reliable batters and bowlers for Rajasthan Royals' IPL 2027 auction strategy.
+A data-driven cricket analytics project developed for **SupeRR Selector Season 2**, focused on identifying reliable batters and bowlers for Rajasthan Royals' IPL 2027 auction strategy.
 
 The project evaluates player performance in pressure situations, compares it with normal match conditions, and combines performance, consistency, and sample-strength measures to produce evidence-based IPL reliability rankings.
 
@@ -54,9 +54,22 @@ The following are the project's final IPL Top 10 rankings. Rank 1 represents the
 
 These are analytical reliability shortlists. They are not a complete auction-value, player-availability, squad-balance, or salary recommendation.
 
+## Project Deliverables
+
+The `docs/` directory contains the final project documentation and presentation.
+
+| Deliverable | File |
+| --- | --- |
+| Final Methodology Report (PDF) | [`FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf`](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf) |
+| Final Methodology Report (Markdown) | [`FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md`](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md) |
+| Project Presentation (PPTX) | [`CRICKET_DATA_PRESSURE_PERFORMANCE.pptx`](docs/CRICKET_DATA_PRESSURE_PERFORMANCE.pptx) |
+| Project Presentation (PDF) | [`CRICKET_DATA_PRESSURE_PERFORMANCE.pdf`](docs/CRICKET_DATA_PRESSURE_PERFORMANCE.pdf) |
+
+The methodology report is the detailed reference for the pressure definitions, metric formulas, eligibility criteria, scoring methodology, validation results, sensitivity analysis, player rankings, and limitations.
+
 ## Methodology Overview
 
-The analysis pipeline is organized into these stages:
+The analysis pipeline is organized into the following stages:
 
 1. **Data integration and reconstruction** — integrates match and ball-by-ball sources and reconstructs innings and delivery-level information.
 2. **Data-quality and rules validation** — audits scheduled balls, legal deliveries, extras, over numbering, innings limits, and related data-quality issues.
@@ -64,12 +77,15 @@ The analysis pipeline is organized into these stages:
 4. **Player performance analysis** — compares pressure performance with normal-condition baselines using role-appropriate batting and bowling metrics.
 5. **Reliability scoring** — combines performance, secondary performance/risk measures, match-level consistency, and sample strength.
 
-Primary scoring weights:
+### Primary Scoring Weights
 
-- Performance: **30%**
-- Secondary metric: **25%**
-- Consistency: **30%**
-- Sample strength: **15%**
+| Component | Weight |
+| --- | ---: |
+| Performance | 30% |
+| Secondary metric | 25% |
+| Consistency | 30% |
+| Sample strength | 15% |
+| **Total** | **100%** |
 
 6. **Eligibility and robustness checks** — applies minimum sample requirements and tests ranking stability through alternative thresholds, weighting scenarios, and leave-one-match-out or related sensitivity analyses.
 7. **Cross-format supporting analysis** — uses T20I results as supplementary evidence. IPL remains the primary basis for the final IPL shortlists.
@@ -80,17 +96,23 @@ For the complete pressure definition, metric formulas, thresholds, assumptions, 
 
 ```text
 SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon/
+│
 ├── README.md
 ├── .gitignore
 ├── requirements.txt
+│
 ├── docs/
+│   ├── CRICKET_DATA_PRESSURE_PERFORMANCE.pdf
+│   ├── CRICKET_DATA_PRESSURE_PERFORMANCE.pptx
 │   ├── FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf
 │   └── FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md
+│
 └── src/
     ├── 01_data_integration.py
     ├── 02_innings_reconstruction.py
     ├── ...
-    └── analysis, validation, sensitivity, and report-generation scripts
+    └── analysis, validation, sensitivity,
+        and report-generation scripts
 ```
 
 The `src/` directory contains the Python pipeline, audits, validation scripts, sensitivity analyses, and report-generation scripts.
@@ -111,21 +133,22 @@ Exact package versions are listed in `requirements.txt`.
 
 ## Setup
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```powershell
 git clone https://github.com/Kamalesh-Suresh-Kumar/SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon.git
+
 cd SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon
 ```
 
-### 2. Create and activate a virtual environment
+### 2. Create and Activate a Virtual Environment
 
 ```powershell
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### 3. Install dependencies
+### 3. Install Dependencies
 
 ```powershell
 python -m pip install --upgrade pip
@@ -150,12 +173,22 @@ The source scripts and report document the intended processing and validation wo
 
 ## Methodology Report
 
-The detailed report is available at:
+The complete methodology report is available in both formats:
 
-[`docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md`](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md)
-[`docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf`](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf)
+- [View the Methodology Report (PDF)](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.pdf)
+- [View the Methodology Report (Markdown)](docs/FINAL_RR_HACKATHON_METHODOLOGY_REPORT.md)
 
-It documents the pressure definition, metrics, eligibility rules, rating methodology, final IPL rankings, T20I supporting evidence, sensitivity analysis, validation checks, limitations, and reproducibility notes.
+It documents:
+
+- Pressure definitions and match-context criteria
+- Batting and bowling performance metrics
+- Eligibility rules and sample-size requirements
+- Reliability rating methodology and scoring weights
+- Final IPL batter and bowler rankings
+- T20I supporting analysis
+- Data-quality and validation checks
+- Sensitivity and robustness analysis
+- Limitations and reproducibility notes
 
 ## Important Notes
 
@@ -163,11 +196,14 @@ It documents the pressure definition, metrics, eligibility rules, rating methodo
 - T20I analysis is supplementary; it does not replace the IPL-based final rankings.
 - Ratings are relative to the eligible player population and should be interpreted within the scope of this analysis.
 - The analysis has limitations arising from data coverage, sample sizes, role differences, and the operational definition of pressure. These are discussed in the methodology report.
+- The final shortlists should be interpreted as analytical evidence, not standalone auction decisions.
 
 ---
 
+## Project Information
+
 **Project:** SupeRR Selector Season 2  
 **Focus:** Identifying the Most Reliable Players Under Pressure  
-**Repository:** <https://github.com/Kamalesh-Suresh-Kumar/SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon>  
+**Repository:** [SupeRR Selector Season 2 – GitHub](https://github.com/Kamalesh-Suresh-Kumar/SupeRR-Selector-Season-2-Rajasthan-Royals-hackathon)  
 **Author:** Kamalesh S P  
-**GitHub:** <https://github.com/Kamalesh-Suresh-Kumar/>
+**GitHub Profile:** [Kamalesh S P](https://github.com/Kamalesh-Suresh-Kumar/)
