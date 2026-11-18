@@ -1,0 +1,41 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Organizer-provided datasets and local data
+data/
+Data Pack/
+
+# Intermediate reports and generated outputs
+reports/
+outputs/
+
+# macOS metadata
+.DS_Store
+._*
+__MACOSX/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# IDE and editor files
+.vscode/
+.idea/
+
+# Operating system files
+Thumbs.db
+desktop.ini
+
+# Local project inventory
+project_tree.txt
